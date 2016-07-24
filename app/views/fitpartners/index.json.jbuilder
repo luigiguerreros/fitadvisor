@@ -1,0 +1,1 @@
+json.array! @fitpartners, partial: 'fitpartners/fitpartner', as: :fitpartner

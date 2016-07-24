@@ -1,0 +1,2 @@
+json.extract! fitpartner, :id, :especialidad, :costo, :tipo_costo, :disponibilidad, :descripcion, :address, :latitude, :longitude, :created_at, :updated_at
+json.url fitpartner_url(fitpartner, format: :json)

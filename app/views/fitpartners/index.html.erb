@@ -1,0 +1,45 @@
+<div class="page-header">
+  <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Fitpartner
+  <% end %>
+  <h1>Listing fitpartners</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nombre</th>
+            <th>Especialidad</th>
+            <th>Costo</th>
+            <th>Tipo costo</th>
+            <th>Disponibilidad</th>
+            <th>Descripcion</th>
+            <th>Address</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @fitpartners) do |fitpartner| %>
+            <td><%= fitpartner.fullname %></td>
+            <td><%= fitpartner.especialidad %></td>
+            <td><%= fitpartner.costo %></td>
+            <td><%= fitpartner.tipo_costo %></td>
+            <td><%= fitpartner.disponibilidad %></td>
+            <td><%= fitpartner.descripcion %></td>
+            <td><%= fitpartner.address %></td>
+            <td><%= fitpartner.latitude %></td>
+            <td><%= fitpartner.longitude %></td>
+            <td><%= link_to 'Show', fitpartner %></td>
+        <td><%= link_to 'Edit', edit_fitpartner_path(fitpartner) %></td>
+        <td><%= link_to 'Destroy', fitpartner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

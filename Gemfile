@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -26,14 +26,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'sprockets', '3.6.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'devise', '~> 4.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
+
+gem 'bootstrap-generators', '~> 3.3', '>= 3.3.4'
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+gem 'record_tag_helper', '~> 1.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

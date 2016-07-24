@@ -1,0 +1,3 @@
+class Fitpartner < ApplicationRecord
+
+end

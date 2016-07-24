@@ -1,0 +1,1 @@
+json.partial! "fitpartners/fitpartner", fitpartner: @fitpartner
