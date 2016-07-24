@@ -5,6 +5,11 @@ class FitpartnersController < ApplicationController
   # GET /fitpartners.json
   def index
     @fitpartners = Fitpartner.all
+    @hash = Gmaps4rails.build_markers(@users) do |fitpartner, marker|
+    marker.lat fitpartner.latitude
+    marker.lng fitpartner.longitude
+    marker.infowindow fitpartner.especialidad
+end
   end
 
   # GET /fitpartners/1

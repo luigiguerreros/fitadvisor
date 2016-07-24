@@ -22,7 +22,7 @@
         <li><a href="#">Preguntas Frecuentes</a></li>
         <li><a href="#">Contáctos</a></li>
         <li><%= link_to("Cerrar sesión", destroy_user_session_path, :method => :delete)  %></li>
-        <li><a href=""><%= current_user.email %></a></li> 
+        <li><a href=""><%= current_user.fullname %></a></li> 
         <% end %>
         </ul>
     </div>

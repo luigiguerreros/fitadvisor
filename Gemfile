@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -38,6 +38,8 @@ end
 gem 'bootstrap-generators', '~> 3.3', '>= 3.3.4'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'record_tag_helper', '~> 1.0'
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem 'gmaps4rails'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
