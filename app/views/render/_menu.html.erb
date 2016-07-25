@@ -21,8 +21,15 @@
         <li><a href="#">Mis FitPartners</a></li>
         <li><a href="#">Preguntas Frecuentes</a></li>
         <li><a href="#">Contáctos</a></li>
-        <li><%= link_to("Cerrar sesión", destroy_user_session_path, :method => :delete)  %></li>
-        <li><a href=""><%= current_user.fullname %></a></li> 
+        <ul class="nav navbar-nav navbar-right">
+            <li id="fat-menu" class="dropdown"><a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fullname %><span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="drop3">
+                    <li><%= link_to "Actualizar", edit_user_registration_path %></li>
+                    <li role="separator" class="divider"></li>
+                    <li><%= link_to("Cerrar sesión", destroy_user_session_path, :method => :delete)  %></li>
+                </ul> 
+            </li> 
+        </ul>        
         <% end %>
         </ul>
     </div>

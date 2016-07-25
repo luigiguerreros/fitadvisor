@@ -10,7 +10,9 @@
   <h1>Show fitpartner</h1>
 </div>
 
-<dl class="dl-horizontal">
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
 
   <dt>Especialidad:</dt>
   <dd><%= @fitpartner.especialidad %></dd>
@@ -35,7 +37,9 @@
 
   <dt>Longitude:</dt>
   <dd><%= @fitpartner.longitude %></dd>
-
 </dl>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@fitpartner.latitude}%2C#{@fitpartner.longitude}" %>
-
+  </div>
+  <div class="col-md-6">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@fitpartner.latitude}%2C#{@fitpartner.longitude}" %>
+  </div>
+</div>
