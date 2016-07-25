@@ -10,12 +10,17 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
     <%= f.radio_button :gender, 'femenino' %> <%= f.label :is_female, "Femenino" %>
     <%= f.radio_button :gender, 'masculino' %> <%= f.label :is_female, "Masculino" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
