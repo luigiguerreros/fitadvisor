@@ -37,3 +37,5 @@
   <dd><%= @fitpartner.longitude %></dd>
 
 </dl>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@fitpartner.latitude}%2C#{@fitpartner.longitude}" %>
+
