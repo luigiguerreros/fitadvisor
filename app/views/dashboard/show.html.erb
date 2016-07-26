@@ -1,0 +1,12 @@
+<p>Username: <%= @user.fullname %></p>
+
+
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.fitpartner.fullname %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>

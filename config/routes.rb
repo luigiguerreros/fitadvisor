@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :fitpartners
+  resources :friendships
+
   get 'dashboard/index'
   get 'welcome/index'
-  
+  get 'dashboard/show'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   	devise_scope :user do
