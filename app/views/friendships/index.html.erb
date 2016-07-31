@@ -1,7 +1,5 @@
 <div class="amigos">
 	<h2>Mis Fitpartners</h2>
-	
-
 		<% @friendships.each do |friendship| %>
 
 			<%= link_to friendships_path, style: "color: black;text-decoration: none;" do %>
@@ -29,10 +27,3 @@
     		<hr class="lineafor">
 		<% end %>
 </div>
-
-<!--
-<% @fitpartners.each do |fitpartner| %>
-<strong><%=h fitpartner.id %></strong>
-<%= link_to "Agregar a fitpartner", friendships_path(user_id: current_user.id, fitpartner_id: fitpartner.id), :method => :post %><br>
-<% end %>
--->
