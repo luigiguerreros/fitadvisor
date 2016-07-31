@@ -1,10 +1,12 @@
 class FitpartnersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_fitpartner, only: [:show, :edit, :update, :destroy]
 
   # GET /fitpartners
   # GET /fitpartners.json
   def index
     @fitpartners = Fitpartner.all
+    
     @hash = Gmaps4rails.build_markers(@fitpartners) do |fitpartner, marker|
     marker.lat fitpartner.latitude
     marker.lng fitpartner.longitude
@@ -15,6 +17,7 @@ class FitpartnersController < ApplicationController
   # GET /fitpartners/1
   # GET /fitpartners/1.json
   def show
+    @friendship = Friendship.where(fitpartner_user: params[:id])
   end
 
   # GET /fitpartners/new
@@ -74,6 +77,6 @@ class FitpartnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fitpartner_params
-      params.require(:fitpartner).permit(:especialidad, :costo, :tipo_costo, :disponibilidad, :descripcion, :address, :latitude, :longitude)
+      params.require(:fitpartner).permit(:user_id, :especialidad, :costo, :tipo_costo, :disponibilidad, :descripcion, :address, :latitude, :longitude)
     end
 end

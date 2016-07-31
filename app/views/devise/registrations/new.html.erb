@@ -1,44 +1,66 @@
-<h2>Sign up</h2>
+<style type="text/css">
+.field_upgrade{
+  width:500px;
+  height: 50px;
+  border: 1.5px solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+.entrar{
+  width: 550px;
+}
+.field_with_errors {
+    @extend .control-group;
+    @extend .error;
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    display: inline-block;
+}
+.formulario_registro{
+  padding-top: 20px;
+}
+  
+</style>
+
+<center><h1>Se parte de FitAdvisor</h1><div class="formulario_registro">
+  <%= form_for(resource,  as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+    <div class="textbox" style="padding-bottom: 60px;">
+      <div class="field">
+        <%= image_tag "export/fit2_27.png" %>
+        <%= f.email_field :email, placeholder: "Correo electrónico", class: "field_upgrade" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <div class="field" style="padding-right: 332px;">
+        <%= image_tag "export/fit2_30.png" %><%= f.radio_button :gender, 'hombre' %> <%= f.label :is_female, "Hombre" %>
+        <%= image_tag "export/fit2_30.png" %><%= f.radio_button :gender, 'mujer' %> <%= f.label :is_female, "Mujer" %>
+      </div>
 
-  <div class="field">
-    <%= f.radio_button :gender, 'femenino' %> <%= f.label :is_female, "Femenino" %>
-    <%= f.radio_button :gender, 'masculino' %> <%= f.label :is_female, "Masculino" %>
-  </div>
+      <div class="field">
+        <%= image_tag "export/fit2_32.png" %>
+        <%= f.text_field :fullname, placeholder: "Nombre completo", class: "field_upgrade" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :fullname %><br />
-    <%= f.text_field :fullname %>
-  </div>
+      <div class="field">
+        <%= image_tag "export/fit2_34.png" %>
+        <%= select_tag(:city_id, options_for_select([['País', 1], ['Argentina', 2], ['Perú'], ['Perú'], ['Paraguay'], ['Bolivia'], ['Chile'], ['Brasil'], ['Ecuador'], ['Colombia'], ['Venezuela'], ['Uruguay'], ['Mexico'], ['Costa Rica'], ['Cuba']], 1), { class: "field_upgrade" }) %>
+      </div>
 
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
+      <div class="field">
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= image_tag "export/fit2_36.png" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña", class: "field_upgrade" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= image_tag "export/fit2_36.png" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirma Contraseña", class: "field_upgrade" %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= image_submit_tag("export/fit2_38.png", class: "entrar") %>
+    </div>
+  <% end %>
+</div></center>

@@ -1,45 +1,81 @@
-<div class="page-header">
+<div class="row">
+  <div class="col-xs-12 col-md-8 caja">
+  <div class="page-header">
   <%= link_to fitpartners_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to edit_fitpartner_path(@fitpartner), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-  <h1>Show fitpartner</h1>
 </div>
+<div class="media">
+
+  <div class="media-left media-middle">
+    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading textcaja"><strong>Daniela</strong><br>
+    <%= @fitpartner.especialidad %>
+    S/. <%= @fitpartner.costo %>
+    por <%= @fitpartner.tipo_costo %><br>
+    <%= @fitpartner.address %><br><br>
+    <span class="label label-info">A 3.2 KM de ti</span>
+  </div> 
+</div>
+<div class="media">
+  <div class="datos">
+    <a href=""><%= image_tag("detalle/fit2_03.png", :class => 'iconodatos')%></a>
+    <a href=""><%= image_tag("detalle/fit2_05.png", :class => 'iconodatos')%></a>
+    <a href=""><%= image_tag("detalle/fit2_08.png", :class => 'iconodatos')%></a>
+  </div>
+</div>
+<hr>
+<center>
+<div class="redes">
+  <p><a href=""> <i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a><a href=""> <i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> <a href=""><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></p>
+</div>
+</center>
+<hr>
 
 <div class="row">
-  <div class="col-md-6">
-    <dl class="dl-horizontal">
-
-  <dt>Especialidad:</dt>
-  <dd><%= @fitpartner.especialidad %></dd>
-
-  <dt>Costo:</dt>
-  <dd><%= @fitpartner.costo %></dd>
-
-  <dt>Tipo costo:</dt>
-  <dd><%= @fitpartner.tipo_costo %></dd>
-
-  <dt>Disponibilidad:</dt>
-  <dd><%= @fitpartner.disponibilidad %></dd>
-
-  <dt>Descripcion:</dt>
-  <dd><%= @fitpartner.descripcion %></dd>
-
-  <dt>Address:</dt>
-  <dd><%= @fitpartner.address %></dd>
-
-  <dt>Latitude:</dt>
-  <dd><%= @fitpartner.latitude %></dd>
-
-  <dt>Longitude:</dt>
-  <dd><%= @fitpartner.longitude %></dd>
-</dl>
+  <div class="col-xs-6 col-md-4">
+    <%= image_tag("detalle/fit2_18.png", :class => 'icono')%> Horario Disponible
   </div>
-  <div class="col-md-6">
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@fitpartner.latitude}%2C#{@fitpartner.longitude}" %>
+  <div class="col-xs-12 col-md-8">
+    <%= @fitpartner.disponibilidad %>
   </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    <%= image_tag("detalle/fit2_22.png", :class => 'icono')%> Sobre el Fitpartner
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <%= @fitpartner.descripcion %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    <%= image_tag("detalle/fit2_26.png", :class => 'icono')%> Rating
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <%= image_tag("detalle/fit2_26.png", :class => 'iconotrueno')%><%= image_tag("detalle/fit2_26.png", :class => 'iconotrueno')%><%= image_tag("detalle/fit2_26.png", :class => 'iconotrueno')%>
+  </div>
+</div>
+<div class="row">
+  
+  <div class="col-xs-12 col-md-12 " style="
+    padding-top: 101px;">
+
+    <% if current_user.id == @friendship %>
+      <button type="button" class="btn btn-danger btn-block btn-lg">Dejar de ser mi Fitpartner</button>
+    <% else %>
+      <button type="button" class="btn btn-success btn-block btn-lg">Coordina con Daniela Saez</button>
+    <% end %>
+  </div>
+</div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x700&sensor=false&zoom=16&markers=#{@fitpartner.latitude}%2C#{@fitpartner.longitude}" %>
+  </div>
+</div>
 </div>

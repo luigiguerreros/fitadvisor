@@ -1,7 +1,13 @@
 class FriendshipsController < ApplicationController
+  before_filter :authenticate_user!
 
+  def index
+    @friendships = Friendship.where(user_id: current_user.id)
+    @fitpartners =  Fitpartner.all
+  end
   def create
-    @friendship = current_user.friendships.build(:fitpartner_id => params[:fitpartner_id])
+    @friendship = Friendship.new(user_id: params[:user_id] , fitpartner_id: params[:fitpartner_id])
+
     if @friendship.save
       flash[:notice] = "Added friend."
       redirect_to root_url

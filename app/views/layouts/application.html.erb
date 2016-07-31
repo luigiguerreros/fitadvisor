@@ -20,7 +20,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<style type="text/css">
+  .pie{
+    background-color: #222;
+  }
+  .link{
+    padding: 20px;
+
+  }
+  footer{
+    position: relative;
+      margin-top: 10%; /* ponga en negativo el alto de su pie de página para nuestro    ejemplo usamos 63, usted debe remplazarlo según su diseño   */
+      height: 150px;
+      clear:both;
+      width:100%;
+  }
+
+</style>
+<body style="padding-top: 100px;">
   <%= render "render/menu" %>
      <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
@@ -28,6 +45,13 @@
         <%= msg %>
       <% end %>
     <% end %>
-    <%= yield %>
+    <div class="yield">
+      <%= yield %>
+    </div>
+    
+    <footer class="pie">
+      <%= render "render/pie" %>
+    </footer>
+  
 </body>
 </html>

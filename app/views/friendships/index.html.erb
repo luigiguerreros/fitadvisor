@@ -1,28 +1,21 @@
 <div class="amigos">
 	<h2>Mis Fitpartners</h2>
-	<!--<ul>
-  	<% for friendship in @user.friendships %>
-    	<li>
-	      	<%=h friendship.fitpartner_id %>
-	      	(<%= link_to "remove", friendship, :method => :delete %>)
-    	</li>
-  	<% end %>
-	</ul>-->
+	
 
-		<% @fitpartners.each do |fitpartner| %>
+		<% @friendships.each do |friendship| %>
 
-			<%= link_to fitpartner, style: "color: black;text-decoration: none;" do %>
+			<%= link_to friendships_path, style: "color: black;text-decoration: none;" do %>
 			    <div class="media" style="padding-left: 15%;">
 			  <div class="media-left media-middle">
 			    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
 			  </div>
 			  <div class="media-body">
 			    <h4 class="media-heading textcaja"><strong>Daniela </strong>
-			    <span class="itemespecialidad"><%= fitpartner.especialidad %></span> 
-			    <span class="itemcosto">S/. <%= fitpartner.costo %></span>
-			    <span class="itemtipocosto">por <%= fitpartner.tipo_costo %></span>
+			    <span class="itemespecialidad"><%= friendship.fitpartner_id %></span> 
+			    <span class="itemcosto">S/. <%= friendship.fitpartner_id %></span>
+			    <span class="itemtipocosto">por <%= friendship.fitpartner_id %></span>
 			    <br>
-			    <div class="itemaddress"><%= fitpartner.address %></div>
+			    <div class="itemaddress"><%= friendship.user_id %></div>
 			    <div class="opiniones"><%= rand(10) %> Opiniones</div>
 			    <div class="rating">
 			    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
@@ -37,4 +30,9 @@
 		<% end %>
 </div>
 
-
+<!--
+<% @fitpartners.each do |fitpartner| %>
+<strong><%=h fitpartner.id %></strong>
+<%= link_to "Agregar a fitpartner", friendships_path(user_id: current_user.id, fitpartner_id: fitpartner.id), :method => :post %><br>
+<% end %>
+-->

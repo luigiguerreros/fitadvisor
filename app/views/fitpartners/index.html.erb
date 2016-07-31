@@ -1,46 +1,57 @@
-<div class="page-header">
-  <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Fitpartner
-  <% end %>
-  <h1>Listing fitpartners</h1>
+<div class="row">   
+  <div class="col-xs-12 col-md-8">
+        <div class="sombra">
+      <center>
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control boxbuscar" placeholder="¿Qué buscas?">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control boxbuscar" placeholder="Tu ubicación: Jr. Oscar Chocano 422, Surco">
+          </div>
+          <button type="submit" class="btn btn-default botonbuscar">Buscar</button>
+        </form>
+      </center>
+    </div>
+        <hr>
+        <div class="page-header">
+          <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-plus"></span>Quiero ser Fitpartner
+            <% end %>
+        </div>
+        <div>
+<%= content_tag_for(:tr, @fitpartners) do |fitpartner| %>
+<%= link_to fitpartner, style: "color: black;text-decoration: none;" do %>
+<div class="media" style="padding-left: 15%;">
+  <div class="media-left media-middle">
+    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading textcaja"><strong>Daniela </strong>
+    <span class="itemespecialidad"><%= fitpartner.especialidad %></span> 
+    <span class="itemcosto">S/. <%= fitpartner.costo %></span>
+    <span class="itemtipocosto">por <%= fitpartner.tipo_costo %></span>
+    <br>
+    <div class="itemaddress"><%= fitpartner.address %></div>
+    <div class="opiniones"><%= rand(10) %> Opiniones</div>
+    <div class="rating">
+    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
+    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
+    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
+    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
+    </div>
+  </div> 
+</div> 
+    <% end %>
+    <hr class="lineafor">
+    <% end %>
+</div>
+  </div>
+  <div class="col-xs-6 col-md-4" style="padding-right: 0; padding-left: 0;">
+      <div id="map" style='width: 100%; height: 800px;'></div>
+  </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-            <th>Especialidad</th>
-            <th>Costo</th>
-            <th>Tipo costo</th>
-            <th>Disponibilidad</th>
-            <th>Descripcion</th>
-            <th>Address</th>
-            <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <%= content_tag_for(:tr, @fitpartners) do |fitpartner| %>
-            <td><%= fitpartner.especialidad %></td>
-            <td><%= fitpartner.costo %></td>
-            <td><%= fitpartner.tipo_costo %></td>
-            <td><%= fitpartner.disponibilidad %></td>
-            <td><%= fitpartner.descripcion %></td>
-            <td><%= fitpartner.address %></td>
-            <td><%= link_to 'Show', fitpartner %></td>
-        <td><%= link_to 'Edit', edit_fitpartner_path(fitpartner) %></td>
-        <td><%= link_to 'Destroy', fitpartner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){

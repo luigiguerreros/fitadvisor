@@ -1,0 +1,81 @@
+.sombra {
+        padding: 20px;
+        .boxbuscar{
+            width: 350px;
+            height: 40px;
+            border-radius: 0;
+        }
+        .botonbuscar{
+            width: 80px;
+            height: 40px;
+            background-color: #792a7b;
+            border: 0;
+            color: white;
+            font-size: 20px;
+            border-radius: 0;
+        }
+}
+
+hr {
+  background-color: #ddd;
+  height: 2px;
+  width: 100%;
+}
+
+.caja{
+    padding-left: 200px;
+    padding-right: 150px;
+}
+
+.textcaja{
+    margin-top: 15px;
+}
+.redes{
+    i{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+.icono{
+    width: 15%;
+}
+.iconotrueno{
+    width: 5%;
+}
+.iconotruenodetalle{
+    width: 10px;
+}
+.datos{
+    position: absolute;
+    text-align: right;
+    top: 18%;
+    right: 20%;
+
+    .iconodatos{
+        width: 20%;
+        padding: 5px;
+    }
+}
+.lineafor{
+    background-color: #ddd;
+    height: 1px;
+    width: 70%;
+}
+.itemcosto{
+    color: #792a7b;
+    font-weight: bold;
+}
+.itemtipocosto{
+    color: #792a7b;
+}
+.itemaddress{
+    padding-top: 10px;
+}
+.opiniones{
+    color: #792a7b;
+    font-size: 13px;
+    padding-top: 10px;
+}
+.formnuevo{
+    width: 50%;
+}
