@@ -17,7 +17,7 @@ class FitpartnersController < ApplicationController
   # GET /fitpartners/1
   # GET /fitpartners/1.json
   def show
-    @friendship = Friendship.where(fitpartner_user: params[:id])
+    #@friendship = Friendship.where(fitpartner_user: params[:id])
   end
 
   # GET /fitpartners/new
