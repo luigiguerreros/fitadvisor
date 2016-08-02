@@ -30,3 +30,45 @@
 	padding-left: 20%;
 	min-height: 250px;
 }
+
+.parallax1 { 
+    /* The image used */
+    background-image: url(image_path('busqueda/fitfondo_02.jpg'));
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .logo{
+        position: relative;
+        top: 20%;
+    }
+
+    .sombra {
+        position:relative;
+        top:50%;
+        width: 100%;
+        height: 100px;
+        background-color: transparent;
+        .boxbuscar{
+            width: 400px;
+            height: 40px;
+            border-radius: 0;
+        }
+        .botonbuscar{
+            width: 155px;
+            height: 40px;
+            background-color: #792a7b;
+            border: 0;
+            color: white;
+            font-size: 20px;
+            border-radius: 0;
+        }
+    }
+}

@@ -1,31 +1,46 @@
-
+<div class="parallax1">
+	<div class="logo">
+		<center><%= image_tag "export/fit2_58.png" %></center>
+	</div>
+	<div class="sombra">
+		<center>
+			<form class="form-inline">
+			  <div class="form-group">
+			    <input type="text" class="form-control boxbuscar" placeholder="¿Qué buscas?">
+			  </div>
+			  <div class="form-group">
+			    <input type="text" class="form-control boxbuscar" placeholder="Tu ubicación: Jr. Oscar Chocano 422, Surco">
+			  </div>
+  			<button id="miBoton" type="button" class="btn btn-default botonbuscar">Buscar</button>
+			</form>
+		</center>
+		
+	</div>
+</div>
 <center>
 	<table border="0" cellpadding="0" cellspacing="0">
 	<tbody>
 	<tr>
 		<td>
-			<%= image_tag('busqueda/fit2_03.jpg', :class => 'itemskill0') %>
-		</td>
-		<td>
 		<%= link_to current_page?('') do %>
-			<%= image_tag('busqueda/fit2_04.jpg', :class => 'itemskill1') %>
+			<%= image_tag('busqueda/people.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 		<td>
 		<%= link_to current_page?('') do %>
-			<%= image_tag('busqueda/fit2_05.jpg', :class => 'itemskill2') %>
+			<%= image_tag('busqueda/places.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td>
 		<%= link_to current_page?('') do %>
-			<%= image_tag('busqueda/fit2_06.jpg', :class => 'itemskill3') %>
+			<%= image_tag('busqueda/food', :class => 'itemskill') %>
 		<% end %>
 		</td>
 		<td>
 		<%= link_to current_page?('') do %>
-			<%= image_tag('busqueda/fit2_07.jpg', :class => 'itemskill4') %>
+			<%= image_tag('busqueda/events.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 	</tr>
