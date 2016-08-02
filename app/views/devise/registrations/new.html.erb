@@ -43,7 +43,8 @@
 
       <div class="field">
         <%= image_tag "export/fit2_34.png" %>
-        <%= select_tag(:city_id, options_for_select([['País', 1], ['Argentina', 2], ['Perú'], ['Perú'], ['Paraguay'], ['Bolivia'], ['Chile'], ['Brasil'], ['Ecuador'], ['Colombia'], ['Venezuela'], ['Uruguay'], ['Mexico'], ['Costa Rica'], ['Cuba']], 1), { class: "field_upgrade" }) %>
+        <%= f.select :country, options_for_select([["Perú", "Perú"], ["Argentina", "Argentina"]]), class: "field_upgrade" %>
+       
       </div>
 
       <div class="field">

@@ -15,9 +15,13 @@
     </div>
         <hr>
         <div class="page-header">
+        <% if @contador == 0 %>
           <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
               <span class="glyphicon glyphicon-plus"></span>Quiero ser Fitpartner
             <% end %>
+        <% else %>
+
+        <% end %>
         </div>
         <div>
 <%= content_tag_for(:tr, @fitpartners) do |fitpartner| %>
@@ -27,7 +31,7 @@
     <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
   </div>
   <div class="media-body">
-    <h4 class="media-heading textcaja"><strong>Daniela </strong>
+    <h4 class="media-heading textcaja"><strong><%= fitpartner.namefit %></strong>
     <span class="itemespecialidad"><%= fitpartner.especialidad %></span> 
     <span class="itemcosto">S/. <%= fitpartner.costo %></span>
     <span class="itemtipocosto">por <%= fitpartner.tipo_costo %></span>

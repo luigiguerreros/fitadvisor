@@ -1,19 +1,22 @@
 <div class="amigos">
 	<h2>Mis Fitpartners</h2>
-		<% @friendships.each do |friendship| %>
 
+	<% if @friendships.count == 0 %>
+			No Tiene fitpartners agregados!
+	<% else %>
+		<% @fitpartners.each do |f| %>
 			<%= link_to friendships_path, style: "color: black;text-decoration: none;" do %>
 			    <div class="media" style="padding-left: 15%;">
 			  <div class="media-left media-middle">
 			    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
 			  </div>
 			  <div class="media-body">
-			    <h4 class="media-heading textcaja"><strong>Daniela </strong>
-			    <span class="itemespecialidad"><%= friendship.fitpartner_id %></span> 
-			    <span class="itemcosto">S/. <%= friendship.fitpartner_id %></span>
-			    <span class="itemtipocosto">por <%= friendship.fitpartner_id %></span>
+			    <h4 class="media-heading textcaja"><strong><%= f.namefit %></strong>
+			    <span class="itemespecialidad"><%= f.especialidad %></span> 
+			    <span class="itemcosto">S/. <%= f.costo %></span>
+			    <span class="itemtipocosto">por <%= f.tipo_costo %></span>
 			    <br>
-			    <div class="itemaddress"><%= friendship.user_id %></div>
+			    <div class="itemaddress"><%= f.address %></div>
 			    <div class="opiniones"><%= rand(10) %> Opiniones</div>
 			    <div class="rating">
 			    <%= image_tag("detalle/fit2_26.png", :class => 'iconotruenodetalle')%>
@@ -26,4 +29,5 @@
 			  <% end %>
     		<hr class="lineafor">
 		<% end %>
+	<% end %>
 </div>

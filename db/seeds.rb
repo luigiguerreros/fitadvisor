@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#Category.create(name: "People")
+#Category.create(name: "Places")
+#Category.create(name: "Food")
+#Category.create(name: "Events")
+  
+#Subcategory.create(name: "Trainer", category_id: Category.find_by(name: "People").id)
+#Subcategory.create(name: "Medicina", category_id: Category.find_by(name: "People").id)
+#Subcategory.create(name: "Yoga", category_id: Category.find_by(name: "People").id)
+#Subcategory.create(name: "Nutricionista", category_id: Category.find_by(name: "People").id)

@@ -3,11 +3,11 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = Friendship.where(user_id: current_user.id)
-    #@fitpartners =  Fitpartner.all
-    #@friendships = Friendship.all
+    @fitpartners =  Friendship.where(:user_id => current_user.id)
+    @fitpartners = Fitpartner.all
   end
   def create
-    @friendship = Friendship.new(user_id: params[:user_id] , fitpartner_id: params[:fitpartner_id])
+    @friendship = Friendship.new(friendship_params)
 
     if @friendship.save
       flash[:notice] = "Added friend."
@@ -17,6 +17,9 @@ class FriendshipsController < ApplicationController
       redirect_to root_url
     end
   end
+  def new
+    
+  end
   
   def destroy
     @friendship = current_user.friendships.find(params[:id])
@@ -24,4 +27,14 @@ class FriendshipsController < ApplicationController
     flash[:notice] = "Removed friendship."
     redirect_to dashboard_show_url
   end
+
+  private
+
+  def friendship_params
+    params.require(:friendship).permit(:fitpartner_id,:user_id)
+
+  end
 end
+
+
+

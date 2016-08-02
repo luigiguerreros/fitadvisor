@@ -1,18 +1,20 @@
 <div class="row">
   <div class="col-xs-12 col-md-8 caja">
+  
   <div class="page-header">
-  <%= link_to fitpartners_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-</div>
+      <%= link_to fitpartners_path, class: 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        Back
+      <% end %>
+  </div>
+
 <div class="media">
 
   <div class="media-left media-middle">
     <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
   </div>
   <div class="media-body">
-    <h4 class="media-heading textcaja"><strong>Daniela</strong><br>
+    <h4 class="media-heading textcaja"><strong><%= @fitpartner.namefit %></strong><br>
     <%= @fitpartner.especialidad %>
     S/. <%= @fitpartner.costo %>
     por <%= @fitpartner.tipo_costo %><br>
@@ -63,14 +65,18 @@
 </div>
 <div class="row">
   
-  <div class="col-xs-12 col-md-12 " style="
-    padding-top: 101px;">
+  <div class="col-xs-12 col-md-12 " style="padding-top: 101px;">
 
-    
-  
-      <button type="button" class="btn btn-success btn-block btn-lg">Coordina con Daniela Saez</button>
-
+<%= form_for Friendship.new do |f| %>
+  <% if @friendship == 0 && @fitpartner.id != current_user.id  %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :fitpartner_id, :value => @fitpartner.id %>
+    <%= f.submit 'Coordina con tu Fitpartner', class: "btn btn-success btn-block btn-lg" %>
+  <% else %>
+    <%= f.submit 'Coordina con tu Fitpartner', class: "btn btn-danger btn-block btn-lg disabled" %>
+  <% end %>
   </div>
+<% end %>
 </div>
   </div>
   <div class="col-xs-6 col-md-4">
