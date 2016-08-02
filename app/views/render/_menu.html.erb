@@ -26,6 +26,7 @@
         <% if !user_signed_in? %>
         <li><a href="#">Ayuda</a></li>
         <li><%= link_to "Registrate", new_user_registration_path %></li>
+        <
         <li><%= link_to "Iniciar sesión", new_user_session_path %></li>
         <% end %>
         <% if user_signed_in? %>
