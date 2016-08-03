@@ -1,10 +1,11 @@
 <div class="amigos">
 	<h2>Mis Fitpartners</h2>
 
-	<% if @friendships.count == 0 %>
+	<% if @vali.present? == false %>
 			No Tiene fitpartners agregados!
 	<% else %>
-		<% @fitpartners.each do |f| %>
+		<% @vali2.each do |f| %>
+
 			<%= link_to friendships_path, style: "color: black;text-decoration: none;" do %>
 			    <div class="media" style="padding-left: 15%;">
 			  <div class="media-left media-middle">

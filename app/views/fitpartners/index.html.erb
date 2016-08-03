@@ -2,28 +2,29 @@
   <div class="col-xs-12 col-md-8">
         <div class="sombra">
       <center>
-        <form class="form-inline">
-          <div class="form-group">
-            <input type="text" class="form-control boxbuscar" placeholder="¿Qué buscas?">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control boxbuscar" placeholder="Tu ubicación: Jr. Oscar Chocano 422, Surco">
-          </div>
-          <button type="submit" class="btn btn-default botonbuscar">Buscar</button>
-        </form>
+         <%= form_tag(fitpartners_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], placeholder: "¿Que buscas?", :class => 'form-control boxbuscar' %>
+            </div>
+            <div class="form-group">
+            <!--<%= text_field_tag :search, params[:search], placeholder: "Tu ubicación", :class => 'form-control boxbuscar' %>-->
+            </div>
+            <%= submit_tag "Buscar", class: "btn btn-default botonbuscar" %>
+        <% end %>
       </center>
     </div>
         <hr>
         <div class="page-header">
-        <% if @contador == 0 %>
-          <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
+        <% if @contador == false %>
+            <%= link_to new_fitpartner_path, class: 'btn btn-primary' do %>
               <span class="glyphicon glyphicon-plus"></span>Quiero ser Fitpartner
             <% end %>
         <% else %>
-
+        
         <% end %>
         </div>
         <div>
+
 <%= content_tag_for(:tr, @fitpartners) do |fitpartner| %>
 <%= link_to fitpartner, style: "color: black;text-decoration: none;" do %>
 <div class="media" style="padding-left: 15%;">

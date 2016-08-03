@@ -11,12 +11,12 @@
         <span class="icon-bar"></span>
       </button>
         <% if user_signed_in? %>
-            <%= link_to current_page?('dashboard/index') do %>
+            <%= link_to root_path('dashboard/index') do %>
             <%= image_tag("export/fit2_03.png", :style => 'height: 50px;')%>
             <% end %>
         <% end %>
         <% if !user_signed_in? %>
-            <%= link_to current_page?('welcome/index') do %>
+            <%= link_to root_path('welcome/index') do %>
                 <%= image_tag("export/fit2_03.png", :style => 'height: 50px;')%>
             <% end %>
         <% end %>
@@ -33,7 +33,7 @@
         <li><%= link_to "Buscar FitPartners", fitpartners_path %></li>
         <li><%= link_to "Mis FitPartners", friendships_path %></li>
         <li><a href="#">Preguntas Frecuentes</a></li>
-        <li><a href="#">Contáctos</a></li>
+        <li><%= link_to "Contactos", send_path %></li>
         <ul class="nav navbar-nav navbar-right">
             <li id="fat-menu" class="dropdown"><a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.fullname %><span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="drop3">

@@ -3,8 +3,13 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = Friendship.where(user_id: current_user.id)
-    @fitpartners =  Friendship.where(:user_id => current_user.id)
+    #@fitpartners =  Friendship.where(:user_id => current_user.id)
     @fitpartners = Fitpartner.all
+
+    #@vali = Friendship.pluck(:user_id)
+
+    
+
   end
   def create
     @friendship = Friendship.new(friendship_params)

@@ -4,15 +4,15 @@
 	</div>
 	<div class="sombra">
 		<center>
-			<form class="form-inline">
-			  <div class="form-group">
-			    <input type="text" class="form-control boxbuscar" placeholder="¿Qué buscas?">
-			  </div>
-			  <div class="form-group">
-			    <input type="text" class="form-control boxbuscar" placeholder="Tu ubicación: Jr. Oscar Chocano 422, Surco">
-			  </div>
-  			<button id="miBoton" type="button" class="btn btn-default botonbuscar">Buscar</button>
-			</form>
+			<%= form_tag(fitpartners_path, :method => "get", id: "search-form", class: 'form-inline') do %>
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], placeholder: "¿Que buscas?", :class => 'form-control boxbuscar' %>
+            </div>
+            <div class="form-group">
+            <!--<%= text_field_tag :search, params[:search], placeholder: "Tu ubicación", :class => 'form-control boxbuscar' %>-->
+            </div>
+            <%= submit_tag "Buscar", class: "btn btn-default botonbuscar" %>
+        <% end %>
 		</center>
 		
 	</div>
@@ -22,24 +22,24 @@
 	<tbody>
 	<tr>
 		<td>
-		<%= link_to current_page?('') do %>
+		<%= link_to '/fitpartners?utf8=✓&search=people&commit=Buscar' do %>
 			<%= image_tag('busqueda/people.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 		<td>
-		<%= link_to current_page?('') do %>
+		<%= link_to '/fitpartners?utf8=✓&search=places&commit=Buscar' do %>
 			<%= image_tag('busqueda/places.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 	</tr>
 	<tr>
 		<td>
-		<%= link_to current_page?('') do %>
+		<%= link_to '/fitpartners?utf8=✓&search=food&commit=Buscar' do %>
 			<%= image_tag('busqueda/food.png', :class => 'itemskill') %>
 		<% end %>
 		</td>
 		<td>
-		<%= link_to current_page?('') do %>
+		<%= link_to '/fitpartners?utf8=✓&search=events&commit=Buscar' do %>
 			<%= image_tag('busqueda/events.png', :class => 'itemskill') %>
 		<% end %>
 		</td>

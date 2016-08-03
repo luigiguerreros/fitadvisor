@@ -6,8 +6,20 @@ class FitpartnersController < ApplicationController
   # GET /fitpartners.json
   def index
     @fitpartners = Fitpartner.all
-    @contador = Friendship.where(:user_id => current_user.id).count
-    
+    #@fitpartners =  Friendship.where(:user_id => current_user.id)
+    @contador = Friendship.where(:user_id => current_user.id, :fitpartner_id => current_user.id).present?
+
+    def index
+      @fitpartners = Fitpartner.all
+
+      if params[:search]
+        @fitpartners = Fitpartner.search(params[:search]).order("created_at DESC")
+      else
+        @fitpartners = Fitpartner.all.order('created_at DESC')
+      end
+    end
+
+
     @hash = Gmaps4rails.build_markers(@fitpartners) do |fitpartner, marker|
     marker.lat fitpartner.latitude
     marker.lng fitpartner.longitude

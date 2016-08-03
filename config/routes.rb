@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'send/index'
+  get 'send' => 'send#index'
+  post 'send' => 'send#create'
+
   resources :fitpartners
   resources :friendships
 

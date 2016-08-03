@@ -69,7 +69,7 @@
 
 <%= form_for Friendship.new do |f| %>
   <% if @friendship == 0 && @fitpartner.id != current_user.id  %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :fitpartner_id, :value => @fitpartner.id %>
     <%= f.submit 'Coordina con tu Fitpartner', class: "btn btn-success btn-block btn-lg" %>
   <% else %>
