@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
 
   def index
   	@fitpartners = Fitpartner.all
+    @fit = Fitpartner.where(user_id: current_user.id).present?
   end
 
   def show

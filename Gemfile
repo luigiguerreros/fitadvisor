@@ -40,7 +40,7 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'record_tag_helper', '~> 1.0'
 gem 'geocoder'
 gem 'gmaps4rails'
-
+gem 'carrierwave'
 
 
 group :development do
