@@ -2,14 +2,7 @@ class FriendshipsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @friendships = Friendship.where(user_id: current_user.id)
-    #@fitpartners =  Friendship.where(:user_id => current_user.id)
-    @fitpartners = Fitpartner.all
-
-    #@vali = Friendship.pluck(:user_id)
-
-    
-
+    @friendships = Fitpartner.joins(:friendships).where({friendships: { user_id: current_user }})
   end
   def create
     @friendship = Friendship.new(friendship_params)

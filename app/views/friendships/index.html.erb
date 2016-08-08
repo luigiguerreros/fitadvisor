@@ -1,15 +1,13 @@
 <div class="amigos">
 	<h2>Mis Fitpartners</h2>
 
-	<% if @vali.present? == false %>
-			No Tiene fitpartners agregados!
-	<% else %>
-		<% @vali2.each do |f| %>
+	<% if @friendships.present? %>
+			<% @friendships.each do |f| %>
 
 			<%= link_to friendships_path, style: "color: black;text-decoration: none;" do %>
 			    <div class="media" style="padding-left: 15%;">
 			  <div class="media-left media-middle">
-			    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
+			    <%= image_tag(f.image.url, :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
 			  </div>
 			  <div class="media-body">
 			    <h4 class="media-heading textcaja"><strong><%= f.namefit %></strong>
@@ -30,5 +28,7 @@
 			  <% end %>
     		<hr class="lineafor">
 		<% end %>
+	<% else %>
+		No registra Fitpartners
 	<% end %>
 </div>

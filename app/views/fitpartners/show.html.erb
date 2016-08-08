@@ -11,7 +11,7 @@
 <div class="media">
 
   <div class="media-left media-middle">
-    <%= image_tag("lista/fit2_09.png", :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
+    <%= image_tag(@fitpartner.image.url, :style => 'width: 100px; height: 100px;', :class => 'img-circle')%>
   </div>
   <div class="media-body">
     <h4 class="media-heading textcaja"><strong><%= @fitpartner.namefit %></strong><br>
